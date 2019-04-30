@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+wget -q -O openrefine-2.8.tar.gz https://github.com/OpenRefine/OpenRefine/releases/download/2.8/openrefine-linux-2.8.tar.gz
+mkdir -p $HOME/.openrefine
+tar xzf openrefine-2.8.tar.gz -C $HOME/.openrefine
+rm openrefine-2.8.tar.gz
+
+mkdir -p $HOME/openrefine
+
+mkdir -p $HOME/.jupyter/
+
+#Although located in binder/,
+# this bash file runs in $HOME rather than $HOME/binder
+mv jupyter_notebook_config.py $HOME/.jupyter/
